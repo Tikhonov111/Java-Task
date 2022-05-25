@@ -12,7 +12,6 @@ import java.util.List;
 //        2.2. Подождать, пока она завершит гонку. Подумай, какой метод нужно использовать для этого.
 //        2.3. Не считать такую лошадь финишировавшей.
 
-
 public class Solution {
 
     public static void main(String[] args) throws InterruptedException {
@@ -22,9 +21,10 @@ public class Solution {
     }
 
     public static int calculateHorsesFinished(List<Horse> horses) throws InterruptedException {
+
         int finishedCount = 0;
         //напишите тут ваш код
-       for (Horse horse : horses) {
+        for (Horse horse : horses) {
             if  (horse.isFinished()) {
                 finishedCount++;
             }
@@ -32,9 +32,8 @@ public class Solution {
             if (!(horse.isFinished())) {
                 System.out.println("Waiting for " + horse.getName());
                 horse.join();
-           }
-       }
-
+            }
+        }
         return finishedCount;
     }
 
@@ -78,3 +77,5 @@ class Horse extends Thread {
         }
     }
 }
+
+
