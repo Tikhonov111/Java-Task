@@ -1,5 +1,10 @@
 package io_even_characters;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+
 //                 Cчитать с консоли 2 имени файла.
 //                 Вывести во второй файл все символы с четным порядковым номером (нумерация начинается с 1)
 //
@@ -10,16 +15,12 @@ package io_even_characters;
 //                 •	Программа должна записывать во второй файл все символы из первого файла с четным порядковым номером (используй FileWriter).
 //                 •	Поток записи в файл (FileWriter) должен быть закрыт.
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         List<Integer> list = new ArrayList<>();
 
-        String sourceFileName = reader.readLine();       
+        String sourceFileName = reader.readLine();
         String destinationFileName = reader.readLine();
 
         FileReader fileReader = new FileReader(sourceFileName);
